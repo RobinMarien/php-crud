@@ -1,18 +1,14 @@
 <?php
 declare(strict_types=1);
 
-class Student
+class Student extends Person
 {
     private $id;
-    private $fullname;
-    private $email;
-    private $grade;
 
     public function __construct(int $_id, string $_fullname, string $_email, int $_grade)
     {
+        parent::__construct($_fullname, $_email, $_grade);
         $this->id = $_id;
-        $this->fullname = $_fullname;
-        $this->email = $_email;
-        $this->grade = $_grade;
     }
+
 }
