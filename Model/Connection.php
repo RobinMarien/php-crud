@@ -5,7 +5,7 @@ class Connection
     public function openConnection()
     {
         $dbhost = "localhost";
-        $dbuser = "manny";
+        $dbuser = "phpUser";
         $dbpass = "wachtwoord";
         $db = "crud";
 
