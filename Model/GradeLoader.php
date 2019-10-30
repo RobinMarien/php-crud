@@ -25,4 +25,13 @@ class GradeLoader
         $row = $stmt->fetch();
         return $row;
     }
+
+    public function createGrade($grade){
+        $connection = new Connection();
+        $pdo = $connection->openConnection();
+        sql = "INSERT INTO grade (gradename, location)
+            VALUES ()"
+    }
 }
+$test= new GradeLoader();
+var_dump($test->getAllGrades());
