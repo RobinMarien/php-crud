@@ -12,7 +12,7 @@
     <meta name="author" content="Robin Mariën, Manny Apsel">
     <link rel="icon" type="image/png" sizes="16x16" href="">
     <link rel="stylesheet" type="text/css" href="../Media/CSS/formstyle.css">
-    <title>New Student</title>
+    <title>Edit a Class</title>
 
 </head>
 <body>
