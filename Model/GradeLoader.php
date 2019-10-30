@@ -29,8 +29,10 @@ class GradeLoader
     public function createGrade($grade){
         $connection = new Connection();
         $pdo = $connection->openConnection();
-        sql = "INSERT INTO grade (gradename, location)
-            VALUES ()"
+        $sql = "INSERT INTO grade (gradename, location)
+            VALUES (:gradename, :location)";
+        $stmnt = $pdo->prepare($sql);
+
     }
 }
 $test= new GradeLoader();
