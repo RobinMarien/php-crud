@@ -12,11 +12,11 @@
     <meta name="author" content="Robin Mariën, Manny Apsel">
     <link rel="icon" type="image/png" sizes="16x16" href="">
     <link rel="stylesheet" type="text/css" href="../Media/CSS/formstyle.css">
-    <title>Create a new student!</title>
+    <title>Create a new teacher!</title>
 
 </head>
 <body>
-    <h1>Create a <span class="highlight">new</span> student!</h1>
+    <h1>Create a <span class="highlight">new</span> teacher!</h1>
     <form>
         <div class="form-section">
             <input type="text" name="name" autocomplete="off" required>

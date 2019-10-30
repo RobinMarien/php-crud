@@ -12,11 +12,11 @@
     <meta name="author" content="Robin Mariën, Manny Apsel">
     <link rel="icon" type="image/png" sizes="16x16" href="">
     <link rel="stylesheet" type="text/css" href="../Media/CSS/formstyle.css">
-    <title>Create a new student!</title>
+    <title>Edit a Student</title>
 
 </head>
 <body>
-    <h1>Create a <span class="highlight">new</span> student!</h1>
+    <h1>Edit an <span class="highlight">existing</span> student!</h1>
     <form>
         <div class="form-section">
             <input type="text" name="name" autocomplete="off" required>
@@ -37,7 +37,7 @@
                 <option value="2">Giertz</option>
             </select>
         </div>
-        <button class="text-right" type="submit">Submit!</button>
+        <button class="text-right" type="submit">Submit changes!</button>
     </form>
     <img id="logo" src="../Media/img/logo_Becode.png">
     <?php require 'includes/footer.php'?>
