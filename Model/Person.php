@@ -13,5 +13,19 @@ class Person
         $this->email = $_email;
         $this->grade = $_grade;
     }
-    
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function getFullname(): string
+    {
+        return $this->fullname;
+    }
+
+    public function getGrade(): int
+    {
+        return $this->grade;
+    }
 }

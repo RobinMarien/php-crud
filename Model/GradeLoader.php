@@ -5,7 +5,7 @@ require '../Model/Connection.php';
 
 class GradeLoader
 {
-    public function getAllGrades()
+    public function getGrades()
     {
         $arrayStudents = array();
         $connection = new Connection();
@@ -26,14 +26,11 @@ class GradeLoader
         return $row;
     }
 
-    public function createGrade($grade){
+    public function createGrade(Grade $grade){
         $connection = new Connection();
         $pdo = $connection->openConnection();
-        $sql = "INSERT INTO grade (gradename, location)
-            VALUES (:gradename, :location)";
+        $sql = "INSERT INTO grade (gradename, location) VALUES ('".$grade->getGradename()."','".$grade->getLocation()."')";
         $stmnt = $pdo->prepare($sql);
-
+        $stmnt->execute();
     }
 }
-$test= new GradeLoader();
-var_dump($test->getAllGrades());

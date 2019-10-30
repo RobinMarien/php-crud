@@ -4,7 +4,7 @@ require "../Model/Connection.php";
 
 class TeacherLoader
 {
-    public function getAllTeachers()
+    public function getTeachers()
     {
         $arrayStudents = array();
         $connection = new Connection();
@@ -16,12 +16,20 @@ class TeacherLoader
         return $arrayStudents;
     }
 
-    public function getStudent($id)
+    public function getTeacher($id)
     {
         $connection = new Connection();
         $pdo = $connection->openConnection();
         $stmt = $pdo->query("SELECT * FROM teacher WhERE id=".$id);
         $row = $stmt->fetch();
         return $row;
+    }
+
+    public function createTeacher(Teacher $teacher){
+        $connection = new Connection();
+        $pdo = $connection->openConnection();
+        $sql = "INSERT INTO teacher (fullname, email, grade) VALUES ('".$teacher->getFullname()."','".$teacher->getEmail()."','".$teacher->getGrade()."')";
+        $stmnt = $pdo->prepare($sql);
+        $stmnt->execute();
     }
 }

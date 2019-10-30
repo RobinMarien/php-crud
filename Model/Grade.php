@@ -13,4 +13,13 @@ class Grade
         $this->gradename = $_gradename;
         $this->location = $_location;
     }
+
+    public function getGradename(): string
+    {
+        return $this->gradename;
+    }
+    public function getLocation(): string
+    {
+        return $this->location;
+    }
 }
