@@ -43,4 +43,13 @@ class StudentLoader
         $stmnt = $pdo->prepare($sql);
         $stmnt->execute();
     }
+
+    public function deleteStudent(Student $deletedStudent){
+        $connection = new Connection();
+        $pdo = $connection->openConnection();
+        $sql = "DELETE FROM student WHERE id = :id";
+        $stmnt = $pdo->prepare($sql);
+        $stmnt->bindParam(':id', $deletedStudent->getId(), PDO::PARAM_INT);
+        $stmnt->execute();
+    }
 }
