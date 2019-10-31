@@ -1,4 +1,9 @@
-<?php ?>
+<?php
+require '../Model/GradeLoader.php';
+
+$gradeloader = new GradeLoader();
+$allgrades = $gradeloader->getGrades();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -33,8 +38,14 @@
         <div class="form-selection">
             <label for="class">Class</label>
             <select name="class">
-                <option value="1">Lamarr</option>
-                <option value="2">Giertz</option>
+
+                <?php foreach ($allgrades as $grade) {
+
+                    echo '<option value="' . $grade['id'] . '">' . $grade['gradename'] . '</option>';
+
+                }
+                ?>
+
             </select>
         </div>
         <button class="text-right" type="submit">Submit!</button>

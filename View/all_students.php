@@ -21,28 +21,31 @@ $allstudents = $studentloader->getStudents();
 
 </head>
 <body>
-<h1><span class="highlight">All</span> students!</h1>
-<table class="">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Class</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($allstudents as $student) {
-        echo '<tr>';
-        echo '<td>' . $student['id'] . '</td>';
-        echo '<td>' . $student['fullname'] . '</td>';
-        echo '<td>' . $student['email'] . '</td>';
-        echo '<td>' . $student['grade'] . '</td>';
-        echo '</tr>';
-    }
-    ?>
-    </tbody>
-</table>
+<div class="margintop">
+    <h1><span class="highlight">All</span> students!</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Class</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($allstudents as $student) {
+            echo '<tr>';
+            echo '<td>' . $student['id'] . '</td>';
+            echo '<td>' . $student['fullname'] . '</td>';
+            echo '<td>' . $student['email'] . '</td>';
+            echo '<td>' . $student['grade'] . '</td>';
+            echo '</tr>';
+        }
+        ?>
+        </tbody>
+    </table>
+</div>
+
 <img id="logo" src="../Media/img/logo_Becode.png">
 <?php require 'includes/footer.php'?>
 </body>

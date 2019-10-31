@@ -22,7 +22,7 @@ $allgrades = $gradeloader->getGrades();
 </head>
 <body>
 <h1><span class="highlight">All</span> classes!</h1>
-<table class="">
+<table>
     <thead>
     <tr>
         <th>ID</th>

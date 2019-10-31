@@ -21,7 +21,7 @@ h1{
 }
 
 .highlight{
-    color: #5fa8d3;
+    color: 	#04C0C7;
 }
 
 form{
@@ -71,7 +71,7 @@ form{
     bottom: -1px;
     height: 100%;
     width: 100%;
-    border-bottom: 3px solid #5fa8d3;
+    border-bottom: 3px solid #04C0C7;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
 }
@@ -86,7 +86,7 @@ form{
 .form-section input:focus + .label-name .content-name,
 .form-section input:valid + .label-name .content-name{
     transform: translateY(-150%);
-    color: #5fa8d3;
+    color: 	#04C0C7;
 }
 
 .form-section input:focus .label-name::after,
@@ -121,6 +121,8 @@ form button{
     left: 12.5%;
     margin-top: 50px;
     border-radius: 10px;
+    background-color: #1D2220;
+    color: white;
 }
 
 #logo{
@@ -134,4 +136,25 @@ form button{
 footer{
     color: white;
     margin-top: 15px;
+}
+
+table{
+    background: white;
+    margin-top: 30px;
+}
+
+th{
+    background: #04C0C7;
+}
+
+td{
+    padding:5px;
+}
+
+thead{
+    border-bottom: solid black 3px;
+}
+
+.margintop{
+    margin-top: 300px;
 }

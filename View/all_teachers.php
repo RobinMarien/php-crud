@@ -22,7 +22,7 @@ $allteachers = $teacherloader->getTeachers();
 </head>
 <body>
 <h1><span class="highlight">All</span> teachers!</h1>
-<table class="">
+<table>
     <thead>
     <tr>
         <th>ID</th>
