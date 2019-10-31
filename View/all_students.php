@@ -1,8 +1,5 @@
 <?php
-require '../Model/StudentLoader.php';
-
-$studentloader = new StudentLoader();
-$allstudents = $studentloader->getStudents();
+declare(strict_types=1);
 ?>
 
 <!doctype html>
@@ -35,10 +32,10 @@ $allstudents = $studentloader->getStudents();
         <tbody>
         <?php foreach ($allstudents as $student) {
             echo '<tr>';
-            echo '<td>' . $student['id'] . '</td>';
-            echo '<td>' . $student['fullname'] . '</td>';
-            echo '<td>' . $student['email'] . '</td>';
-            echo '<td>' . $student['grade'] . '</td>';
+            echo '<td>' . $student->getId() . '</td>';
+            echo '<td>' . $student->getFullname() . '</td>';
+            echo '<td>' . $student->getEmail() . '</td>';
+            echo '<td>' . $student->getGrade() . '</td>';
             echo '</tr>';
         }
         ?>
