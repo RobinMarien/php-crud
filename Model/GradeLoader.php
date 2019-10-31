@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-require '../Model/Connection.php';
-
 class GradeLoader
 {
     public function getGrades()
@@ -66,8 +64,3 @@ class GradeLoader
         }
     }
 }
-
-require '../Model/Grade.php';
-$test = new GradeLoader();
-$grade = new Grade(2, "Giertz", "Antwerp");
-$test->deleteGrade($grade);

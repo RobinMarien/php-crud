@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-require '../Model/Connection.php';
-
 class StudentLoader
 {
     public function getStudents()
@@ -12,7 +10,8 @@ class StudentLoader
         $pdo = $connection->openConnection();
         $stmt = $pdo->query("SELECT * FROM student");
         while ($row = $stmt->fetch()) {
-            array_push($arrayStudents, $row);
+            $student = new Student($row['id'], $row['fullname'], $row['email'], $row['grade']);
+            array_push($arrayStudents, $student);
         }
         return $arrayStudents;
     }

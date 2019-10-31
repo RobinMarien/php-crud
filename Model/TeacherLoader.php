@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-require "../Model/Connection.php";
 
 class TeacherLoader
 {
