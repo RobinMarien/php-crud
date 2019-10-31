@@ -3,6 +3,7 @@ require '../Model/StudentLoader.php';
 
 $studentloader = new StudentLoader();
 $allstudents = $studentloader->getStudents();
+
 ?>
 
 <!doctype html>
