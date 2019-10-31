@@ -20,6 +20,9 @@ declare(strict_types=1);
 <body>
 <div class="margintop">
     <h1><span class="highlight">All</span> students!</h1>
+    <form method="post">
+        <input type="submit" value="Create New Student" name="createStudent">
+    </form>
     <table>
         <thead>
         <tr>
@@ -36,6 +39,10 @@ declare(strict_types=1);
             echo '<td>' . $student->getFullname() . '</td>';
             echo '<td>' . $student->getEmail() . '</td>';
             echo '<td>' . $student->getGrade() . '</td>';
+            echo '<form method="post">';
+            echo '<td><input type="submit" value="edit" name="editStudent"></td>';
+            echo '<td><input type="submit" value="delete" name="deleteStudent"></td>';
+            echo '</form>';
             echo '</tr>';
         }
         ?>
@@ -44,6 +51,6 @@ declare(strict_types=1);
 </div>
 
 <img id="logo" src="../Media/img/logo_Becode.png">
-<?php require 'includes/footer.php'?>
+<?php require 'includes/footer.php' ?>
 </body>
 </html>

@@ -20,11 +20,22 @@ require 'Controller/StudentController.php';
 $controller = new HomepageController();
 $controller->render($_GET, $_POST);*/
 
-if (isset($_POST["students"])){
+function deleteEverythingPost($post)
+{
+    foreach ($post as $elemnt) {
+        $elemnt = null;
+    }
+}
+
+if (isset($_POST["students"])) {
+    deleteEverythingPost($_POST);
     $controller = new StudentController();
     $controller->render();
-}
-else{
+} else if (isset($_POST["createStudent"])) {
+    deleteEverythingPost($_POST);
+    $controller = new
+} else {
+    deleteEverythingPost($_POST);
     $controller = new HomepageController();
     $controller->render($_GET, $_POST);
 }

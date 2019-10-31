@@ -1,10 +1,3 @@
-<?php
-require '../Model/GradeLoader.php';
-
-$gradeloader = new GradeLoader();
-$allgrades = $gradeloader->getGrades();
-?>
-
 <!doctype html>
 <html lang="en">
 <head>

@@ -5,13 +5,10 @@ class StudentController
 {
     public function render()
     {
-        try {
-            $studentLoader = new StudentLoader();
-            $allstudents = $studentLoader->getStudents();
+        $studentLoader = new StudentLoader();
+        $allstudents = $studentLoader->getStudents();
 
-            require 'View/all_students.php';
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+        require 'View/all_students.php';
+
     }
 }
