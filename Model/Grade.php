@@ -22,4 +22,8 @@ class Grade
     {
         return $this->location;
     }
+    public function getId(): int
+    {
+        return $this->id;
+    }
 }

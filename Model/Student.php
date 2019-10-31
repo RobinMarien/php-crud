@@ -10,4 +10,9 @@ class Student extends Person
         parent::__construct($_fullname, $_email, $_grade);
         $this->id = $_id;
     }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
 }

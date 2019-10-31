@@ -30,7 +30,16 @@ class StudentLoader
     {
         $connection = new Connection();
         $pdo = $connection->openConnection();
-        $sql = "INSERT INTO student (fullname, email, grade) VALUES ('".$student->getFullname()."','".$student->getEmail()."','".$student->getGrade()."')";
+        $sql = "INSERT INTO student (fullname, email, grade) VALUES ('" . $student->getFullname() . "','" . $student->getEmail() . "','" . $student->getGrade() . "')";
+        $stmnt = $pdo->prepare($sql);
+        $stmnt->execute();
+    }
+
+    public function editStudent(Student $editedStudent)
+    {
+        $connection = new Connection();
+        $pdo = $connection->openConnection();
+        $sql = "UPDATE student SET fullname = '" . $editedStudent->getFullname() . "', email = '" . $editedStudent->getEmail() . "', grade = '" . $editedStudent->getGrade() . "' WHERE id = " . $editedStudent->getId();
         $stmnt = $pdo->prepare($sql);
         $stmnt->execute();
     }
