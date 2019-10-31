@@ -9,10 +9,11 @@
 </head>
 <body>
     <?php require 'includes/header.php'?>
-    <section>
-        <h4>Hello <?php echo $user->getName()?>,</h4>
-        <p>Put your content here.</p>
-    </section>
+    <form method="post">
+        <input type="submit" name="students" value="students">
+        <input type="submit" name="teachers" value="teachers">
+        <input type="submit" name="classes" value="classes">
+    </form>
     <?php require 'includes/footer.php'?>
 </body>
 </html>
