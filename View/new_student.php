@@ -1,9 +1,4 @@
-<?php
-require '../Model/GradeLoader.php';
 
-$gradeloader = new GradeLoader();
-$allgrades = $gradeloader->getGrades();
-?>
 
 <!doctype html>
 <html lang="en">
@@ -41,7 +36,7 @@ $allgrades = $gradeloader->getGrades();
 
                 <?php foreach ($allgrades as $grade) {
 
-                    echo '<option value="' . $grade['id'] . '">' . $grade['gradename'] . '</option>';
+                    echo '<option value="' . $grade->getId() . '">' . $grade->getGradename(). '</option>';
 
                 }
                 ?>
