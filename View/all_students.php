@@ -34,16 +34,17 @@ declare(strict_types=1);
         </thead>
         <tbody>
         <?php foreach ($allstudents as $student) {
+            echo '<form method="post">';
             echo '<tr>';
             echo '<td>' . $student->getId() . '</td>';
             echo '<td>' . $student->getFullname() . '</td>';
             echo '<td>' . $student->getEmail() . '</td>';
             echo '<td>' . $student->getGrade() . '</td>';
-            echo '<form method="post">';
-            echo '<td><input type="submit" value="edit" name="editStudent"></td>';
-            echo '<td><input type="submit" value="delete" name="deleteStudent"></td>';
-            echo '</form>';
+            $edit = base64_encode(serialize($student));
+            echo '<td><button type="submit" value="'.$edit.'" name="editStudent">edit</button></td>';
+            echo '<td><button type="submit" value="delete" name="deleteStudent">delete</button></td>';
             echo '</tr>';
+            echo '</form>';
         }
         ?>
         </tbody>

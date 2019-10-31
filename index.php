@@ -14,28 +14,31 @@ require 'Model/GradeLoader.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/StudentController.php';
+require 'Controller/CreateStudentController.php';
+require 'Controller/EditStudentController.php';
+require 'Controller/DeleteStudentController.php';
 
 /*//you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
 //this file should never be more than 20 lines of code!
 $controller = new HomepageController();
 $controller->render($_GET, $_POST);*/
 
-function deleteEverythingPost($post)
-{
-    foreach ($post as $elemnt) {
-        $elemnt = null;
-    }
-}
-
 if (isset($_POST["students"])) {
-    deleteEverythingPost($_POST);
     $controller = new StudentController();
     $controller->render();
 } else if (isset($_POST["createStudent"])) {
-    deleteEverythingPost($_POST);
-    $controller = new
-} else {
-    deleteEverythingPost($_POST);
+    $controller = new CreateStudentController();
+    $controller->render();
+} else if (isset($_POST["editStudent"])) {
+    $controller = new EditStudentController();
+    $controller->render();
+} else if(isset($_POST["deleteStudent"])){
+    $controller = new DeleteStudentController();
+    $controller->render();
+}
+else {
+
     $controller = new HomepageController();
     $controller->render($_GET, $_POST);
 }
+

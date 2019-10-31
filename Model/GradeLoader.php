@@ -10,7 +10,8 @@ class GradeLoader
         $pdo = $connection->openConnection();
         $stmt = $pdo->query("SELECT * FROM grade");
         while ($row = $stmt->fetch()) {
-            array_push($arrayStudents, $row);
+            $grade = new Grade($row['id'], $row['gradename'], $row['location']);
+            array_push($arrayStudents, $grade);
         }
         return $arrayStudents;
     }
