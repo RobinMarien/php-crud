@@ -40,9 +40,9 @@ declare(strict_types=1);
             echo '<td>' . $student->getFullname() . '</td>';
             echo '<td>' . $student->getEmail() . '</td>';
             echo '<td>' . $student->getGrade() . '</td>';
-            $edit = base64_encode(serialize($student));
-            echo '<td><button type="submit" value="'.$edit.'" name="editStudent">edit</button></td>';
-            echo '<td><button type="submit" value="delete" name="deleteStudent">delete</button></td>';
+            $encodedAndSerializedStudent = base64_encode(serialize($student));
+            echo '<td><button type="submit" value="'.$encodedAndSerializedStudent.'" name="editStudent">edit</button></td>';
+            echo '<td><button type="submit" value="'.$encodedAndSerializedStudent.'" name="students">delete</button></td>';
             echo '</tr>';
             echo '</form>';
         }
