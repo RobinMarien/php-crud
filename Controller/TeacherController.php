@@ -12,7 +12,7 @@ class TeacherController
         }
         else if(isset($_POST["editName"]) && isset($_POST["editEmail"]) && isset($_POST["editClass"])){
             $teacher = new Teacher((int)$_POST["teachers"], $_POST["editName"], $_POST["editEmail"], (int)$_POST["editClass"]);
-            $teacherloader->editStudent($teacher);
+            $teacherloader->editTeacher($teacher);
         }
         else if(unserialize(base64_decode($_POST["teachers"]))){
             $teacher = unserialize(base64_decode($_POST["teachers"]));
