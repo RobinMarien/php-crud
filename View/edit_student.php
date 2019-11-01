@@ -39,7 +39,8 @@
             <?php endforeach; ?>
         </select>
     </div>
-    <button class="text-right" type="submit" name="students" value="<?php echo $student->getId()?>">Submit changes!</button>
+    <button class="text-right" type="submit" name="students" value="<?php echo $student->getId() ?>">Submit changes!
+    </button>
 </form>
 <img id="logo" src="../Media/img/logo_Becode.png">
 <?php require 'includes/footer.php' ?>

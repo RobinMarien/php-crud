@@ -1,5 +1,3 @@
-<?php ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,30 +14,33 @@
 
 </head>
 <body>
-    <h1>Edit an <span class="highlight">existing</span> teacher!</h1>
-    <form>
-        <div class="form-section">
-            <input type="text" name="name" autocomplete="off" required>
-            <label for="name" class="label-name">
-                <span class="content-name">Name</span>
-            </label>
-        </div>
-        <div class="form-section">
-            <input type="text" name="email" autocomplete="off" required>
-            <label for="email" class="label-name">
-                <span class="content-name">E-mail</span>
-            </label>
-        </div>
-        <div class="form-selection">
-            <label for="class">Class</label>
-            <select name="class">
-                <option value="1">Lamarr</option>
-                <option value="2">Giertz</option>
-            </select>
-        </div>
-        <button class="text-right" type="submit">Submit changes!</button>
-    </form>
-    <img id="logo" src="../Media/img/logo_Becode.png">
-    <?php require 'includes/footer.php'?>
+<h1>Edit an <span class="highlight">existing</span> teacher!</h1>
+<form method="post">
+    <div class="form-section">
+        <input type="text" name="editName" autocomplete="off" value="<?php echo $teacher->getFullname() ?>" required>
+        <label for="name" class="label-name">
+            <span class="content-name">Name</span>
+        </label>
+    </div>
+    <div class="form-section">
+        <input type="text" name="editEmail" autocomplete="off" value="<?php echo $teacher->getEmail() ?>" required>
+        <label for="email" class="label-name">
+            <span class="content-name">E-mail</span>
+        </label>
+    </div>
+    <div class="form-selection">
+        <label for="class">Class</label>
+        <select name="editClass">
+            <?php foreach ($grade as $item) : ?>
+                <option value="<?php echo $item->getId() ?>"><?php echo $item->getGradename() ?></option>
+
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <button class="text-right" type="submit" name="teachers" value="<?php echo $teacher->getId() ?>">Submit changes!
+    </button>
+</form>
+<img id="logo" src="../Media/img/logo_Becode.png">
+<?php require 'includes/footer.php' ?>
 </body>
 </html>

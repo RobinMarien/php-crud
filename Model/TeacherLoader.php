@@ -10,7 +10,8 @@ class TeacherLoader
         $pdo = $connection->openConnection();
         $stmt = $pdo->query("SELECT * FROM teacher");
         while ($row = $stmt->fetch()) {
-            array_push($arrayStudents, $row);
+            $teacher = new Teacher($row['id'], $row['fullname'], $row['email'], $row['grade']);
+            array_push($arrayStudents, $teacher);
         }
         return $arrayStudents;
     }

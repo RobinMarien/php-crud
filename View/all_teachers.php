@@ -1,10 +1,3 @@
-<?php
-require '../Model/TeacherLoader.php';
-
-$teacherloader = new TeacherLoader();
-$allteachers = $teacherloader->getTeachers();
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +15,9 @@ $allteachers = $teacherloader->getTeachers();
 </head>
 <body>
 <h1><span class="highlight">All</span> teachers!</h1>
+<form method="post">
+    <input type="submit" value="Create New Teacher" name="createTeacher">
+</form>
 <table>
     <thead>
     <tr>
@@ -33,12 +29,17 @@ $allteachers = $teacherloader->getTeachers();
     </thead>
     <tbody>
     <?php foreach ($allteachers as $teacher) {
+        echo '<form method="post">';
         echo '<tr>';
-        echo '<td>' . $teacher['id'] . '</td>';
-        echo '<td>' . $teacher['fullname'] . '</td>';
-        echo '<td>' . $teacher['email'] . '</td>';
-        echo '<td>' . $teacher['grade'] . '</td>';
+        echo '<td>' . $teacher->getId() . '</td>';
+        echo '<td>' . $teacher->getFullname() . '</td>';
+        echo '<td>' . $teacher->getEmail() . '</td>';
+        echo '<td>' . $teacher->getGrade() . '</td>';
+        $encodedAndSerializedTeacher = base64_encode(serialize($teacher));
+        echo '<td><button type="submit" value="'.$encodedAndSerializedTeacher.'" name="editTeacher">edit</button></td>';
+        echo '<td><button type="submit" value="'.$encodedAndSerializedTeacher.'" name="teachers">delete</button></td>';
         echo '</tr>';
+        echo '</form>';
     }
     ?>
     </tbody>

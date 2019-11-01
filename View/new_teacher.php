@@ -1,10 +1,3 @@
-<?php
-require '../Model/GradeLoader.php';
-
-$gradeloader = new GradeLoader();
-$allgrades = $gradeloader->getGrades();
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,36 +14,31 @@ $allgrades = $gradeloader->getGrades();
 
 </head>
 <body>
-    <h1>Create a <span class="highlight">new</span> teacher!</h1>
-    <form>
-        <div class="form-section">
-            <input type="text" name="name" autocomplete="off" required>
-            <label for="name" class="label-name">
-                <span class="content-name">Name</span>
-            </label>
-        </div>
-        <div class="form-section">
-            <input type="text" name="email" autocomplete="off" required>
-            <label for="email" class="label-name">
-                <span class="content-name">E-mail</span>
-            </label>
-        </div>
-        <div class="form-selection">
-            <label for="class">Class</label>
-            <select name="class">
-
-                <?php foreach ($allgrades as $grade) {
-
-                    echo '<option value="' . $grade['id'] . '">' . $grade['gradename'] . '</option>';
-
-                }
-                ?>
-
-            </select>
-        </div>
-        <button class="text-right" type="submit">Submit!</button>
-    </form>
-    <img id="logo" src="../Media/img/logo_Becode.png">
-    <?php require 'includes/footer.php'?>
+<h1>Create a <span class="highlight">new</span> teacher!</h1>
+<form method="post">
+    <div class="form-section">
+        <input type="text" name="createName" autocomplete="off" required>
+        <label for="name" class="label-name">
+            <span class="content-name">Name</span>
+        </label>
+    </div>
+    <div class="form-section">
+        <input type="text" name="createEmail" autocomplete="off" required>
+        <label for="email" class="label-name">
+            <span class="content-name">E-mail</span>
+        </label>
+    </div>
+    <div class="form-selection">
+        <label for="class">Class</label>
+        <select name="createClass">
+            <?php foreach ($grade as $item) : ?>
+                <option value="<?php echo $item->getId() ?>"><?php echo $item->getGradename() ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <button class="text-right" type="submit" name="teachers">Submit!</button>
+</form>
+<img id="logo" src="../Media/img/logo_Becode.png">
+<?php require 'includes/footer.php' ?>
 </body>
 </html>

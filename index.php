@@ -16,12 +16,16 @@ require 'Controller/HomepageController.php';
 require 'Controller/StudentController.php';
 require 'Controller/CreateStudentController.php';
 require 'Controller/EditStudentController.php';
+require 'Controller/TeacherController.php';
+require 'Controller/CreateTeacherController.php';
 
 /*//you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
 //this file should never be more than 20 lines of code!
 $controller = new HomepageController();
 $controller->render($_GET, $_POST);*/
 
+// Op basis van if statements kijken we in de POST naar welke studentcontroller we gestuurd worden
+// Als er geen student controller gekozen werd gaan we naar de homepage
 if (isset($_POST["students"])) {
     $controller = new StudentController();
     $controller->render();
