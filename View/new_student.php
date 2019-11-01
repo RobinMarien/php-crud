@@ -17,6 +17,8 @@
 <h1>Create a <span class="highlight">new</span> student!</h1>
 <form method="post">
     <div class="form-section">
+        <!-- De form houdt de variabele bij via de POST die zal worden.
+             later zullen de variabelen een object vormen-->
         <input type="text" name="createName" autocomplete="off" required>
         <label for="name" class="label-name">
             <span class="content-name">Name</span>
@@ -37,6 +39,7 @@
             <?php endforeach; ?>
         </select>
     </div>
+    <!-- de name attribuut zorgt ervoor dat we terugkeren naar de studentController.php-->
     <button class="text-right" type="submit" name="students">Submit!</button>
 </form>
 <img id="logo" src="../Media/img/logo_Becode.png">

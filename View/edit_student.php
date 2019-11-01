@@ -19,6 +19,7 @@
 <h1>Edit an <span class="highlight">existing</span> student!</h1>
 <form method="post">
     <div class="form-section">
+        <!-- we hebben het object student aangemaakt in de EditStudentController.php -->
         <input type="text" name="editName" autocomplete="off" value="<?php echo $student->getFullname() ?>" required>
         <label for="name" class="label-name">
             <span class="content-name">Name</span>
@@ -39,6 +40,8 @@
             <?php endforeach; ?>
         </select>
     </div>
+    <!-- de name attribuut zal ons verwijzen naar de studentController.php; we houden hier ook het id nummer dat
+         bewerkt gaat worden-->
     <button class="text-right" type="submit" name="students" value="<?php echo $student->getId() ?>">Submit changes!
     </button>
 </form>

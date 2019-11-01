@@ -10,6 +10,8 @@
 <body>
     <?php require 'includes/header.php'?>
     <form method="post">
+        <!-- Hier kies je welke lijst je wilt zien, bij het klikken keer je terug naar de index.php die je -->
+        <!-- naar de volgende controller verwijst. Commentaar zal alleen te vinden zijn bij de student controllers -->
         <input type="submit" name="students" value="students">
         <input type="submit" name="teachers" value="teachers">
         <input type="submit" name="classes" value="classes">

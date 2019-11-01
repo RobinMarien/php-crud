@@ -5,17 +5,25 @@ class StudentLoader
 {
     public function getStudents()
     {
+        // creëer nieuwe lege array
         $arrayStudents = array();
+        // open de verbinding met de database
         $connection = new Connection();
         $pdo = $connection->openConnection();
+        // creëer SQL query (statement) die $pdo zal moeten op halen
         $stmt = $pdo->query("SELECT * FROM student");
+        // loop door alle rijen data die worden opgevangen
         while ($row = $stmt->fetch()) {
+            // creëer nieuw student
             $student = new Student($row['id'], $row['fullname'], $row['email'], $row['grade']);
+            // push het object in een array
             array_push($arrayStudents, $student);
         }
+        // return alle studenten die je hebt opgehaald uit de database
         return $arrayStudents;
     }
 
+    // deze functie wordt niet gebruikt
     public function getStudent($id)
     {
         $connection = new Connection();

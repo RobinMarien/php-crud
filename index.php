@@ -27,6 +27,9 @@ $controller->render($_GET, $_POST);*/
 // Op basis van if statements kijken we in de POST naar welke studentcontroller we gestuurd worden
 // Als er geen student controller gekozen werd gaan we naar de homepage
 if (isset($_POST["students"])) {
+    // bij de homepage.php file hebben we voor students gekozen en gaan we zodoende een student controller aan maken
+    // maar, je komt hier ook meteen terecht nadat je op de delete button in all_students.php hebt geklikt of op
+    // submit button bij de edit_student & new_student
     $controller = new StudentController();
     $controller->render();
 } else if (isset($_POST["createStudent"])) {
@@ -45,7 +48,9 @@ if (isset($_POST["students"])) {
     $controller = new EditTeacherController();
     $controller->render();
 } else {
+    // creëer nieuwe HP controller
     $controller = new HomepageController();
+    // de GET en POST zijn onnodig, nog iets dat overkwam van Koen mvc boiler plate
     $controller->render($_GET, $_POST);
 }
 

@@ -11,8 +11,6 @@ class TeacherController
             $teacherloader->createTeacher($teacher);
         }
         else if(isset($_POST["editName"]) && isset($_POST["editEmail"]) && isset($_POST["editClass"])){
-            // in the $_POST["students"] zit de id van de student die wordt bewerkt
-            // zie de button tag helemaal onderaan in de edit_student.php file
             $teacher = new Teacher((int)$_POST["teachers"], $_POST["editName"], $_POST["editEmail"], (int)$_POST["editClass"]);
             $teacherloader->editStudent($teacher);
         }
